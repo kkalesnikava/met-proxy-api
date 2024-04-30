@@ -1,0 +1,18 @@
+apiVersion: skaffold/v4beta10
+kind: Config
+metadata:
+  name: python-api
+build:
+  artifacts:
+    - image: localhost/python-api
+  local: {}
+deploy:
+  helm:
+    releases:
+      - name: python-api
+        chartPath: infrastructure/python-api
+        createNamespace: true
+        namespace: app
+        setValueTemplates:
+          image.repository: "{{.IMAGE_REPO_localhost_python_api}}"
+          image.tag: "{{.IMAGE_TAG_localhost_python_api}}@{{.IMAGE_DIGEST_localhost_python_api}}"

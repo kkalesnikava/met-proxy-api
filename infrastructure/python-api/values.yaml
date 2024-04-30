@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/kkoles/python-api
+  pullPolicy: IfNotPresent
+  tag: v1.0.0
+
+service:
+  type: LoadBalancer
+  port: 8080
