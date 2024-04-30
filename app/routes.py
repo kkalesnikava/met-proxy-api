@@ -2,6 +2,9 @@ import os
 import requests
 
 from app import app
+from dotenv import load_dotenv
+
+load_dotenv()
 
 REMOTE_ENTITY = os.getenv('REMOTE_ENTITY')
 REMOTE_BASE_URL = os.getenv('REMOTE_BASE_URL')
