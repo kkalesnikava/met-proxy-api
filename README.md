@@ -89,14 +89,16 @@ Run the following command to use Skaffold:
 ```
 skaffold dev
 ```
-Run on the separate terminal (Do not close the terminal window!):
+Run on a separate terminal (Do not close the terminal window!):
 ```
 minikube tunnel -p custom
 ```
 Open your browser at `http://localhost:8080` and browse the app webpage:
+
 ![alt text](images/browser.png)
 
-Or run on your terminal `curl` command:
+Or run `curl` command on your terminal:
+
 ```
 curl -s http://localhost:8080/object/10101 | jq
 ```
