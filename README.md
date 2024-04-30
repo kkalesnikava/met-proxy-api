@@ -1,6 +1,11 @@
 # Sample Python Api Setup
 
-A sample python-api service that retrieves data from The Metropolitan Museum of Art Collection API (https://metmuseum.github.io/) about objects on display in the museum.
+A sample python-api service that retrieves data from [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/) about objects on display in the museum.
+
+## Repo structure
+- `app` - Flask app module
+- `images` -  supporting images for README.md
+- `helm` - Helm charts for python-api deployment (via skaffold)
 
 ## Basic usage
 Available endpoints:
