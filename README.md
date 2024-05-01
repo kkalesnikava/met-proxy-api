@@ -4,7 +4,6 @@ A sample python-api service that retrieves data from [The Metropolitan Museum of
 
 ## Repo structure
 - `app` - Flask app module
-- `images` -  supporting images for README.md
 - `helm` - Helm charts for python-api deployment (via skaffold)
 
 ## Basic usage
@@ -65,8 +64,20 @@ Example output for the endpoint `/object/10101`:
 }
 ```
 
+## How to run the app locally with `venv`
+Create and activate virtual environment and install dependecies:
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+Run the following command to start Flask app:
+```
+flask run
+```
+Open your browser at `http://localhost:8080` and browse the app webpage.
 
-## How to test the app locally with Docker
+## How to run the app locally with Docker
 On the repo root run the following command to build an image:
 ```
 docker build -t localhost:python-api .
@@ -100,11 +111,11 @@ minikube tunnel -p custom
 ```
 Open your browser at `http://localhost:8080` and browse the app webpage:
 
-![alt text](images/browser.png)
+![alt text](docs/browser.png)
 
 Or run `curl` command on your terminal:
 
 ```
 curl -s http://localhost:8080/object/10101 | jq
 ```
-![alt text](images/terminal.png)
+![alt text](docs/terminal.png)
