@@ -77,6 +77,11 @@ flask run
 ```
 Open your browser at `http://localhost:8080` and browse the app webpage.
 
+After the job is complete, run the following command to stop venv:
+```
+deactivate
+```
+
 ## How to run the app locally with Docker
 On the repo root run the following command to build an image:
 ```
@@ -88,6 +93,11 @@ docker run --rm -p 8080:8080 -d --name api localhost:python-api
 ```
 Open your browser at `http://localhost:8080` and browse the app webpage.
 
+After the job is complete, run the following command to stop docker container (it will be removed, since the container was launched with `--rm` flag):
+```
+docker stop api
+```
+
 ## How to deploy the app locally
 Local deployment is done using **minikube** and **skaffold** for deploying helm charts to the cluster
 
@@ -95,7 +105,7 @@ Local deployment is done using **minikube** and **skaffold** for deploying helm 
 > - **Skaffold** installation guide: https://skaffold.dev/docs/install/
 
 ### Setup
-Start minikube with a custom profile:
+Start minikube with a custom profile and configure skaffold:
 ```
 minikube start --profile custom
 skaffold config set --global local-cluster true
