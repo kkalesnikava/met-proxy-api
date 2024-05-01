@@ -13,7 +13,7 @@ Available endpoints:
 `/` or `/index` - returns information about a default object on display in the museum - Japanese Hanging scroll "Quail and Millet" created by Kiyohara Yukinobu
 
 Example output:
-```
+```json
 {
   "remote_endpoint_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/45734",
   "remote_entity": "Metropolitan Museum of Art",
@@ -42,7 +42,7 @@ Example output:
 `/object/{id}` - returns information about the object with id `{id}` on display in the museum 
 
 Example output for the endpoint `/object/10101`:
-```
+```json
 {
   "remote_endpoint_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/10101",
   "remote_entity": "Metropolitan Museum of Art",
