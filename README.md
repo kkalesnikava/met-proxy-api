@@ -93,6 +93,11 @@ docker run --rm -p 8080:8080 -d --name api localhost:python-api
 ```
 Open your browser at `http://localhost:8080` and browse the app webpage.
 
+You can check the app logs by running:
+```
+docker logs api
+```
+
 After the job is complete, run the following command to stop docker container (it will be removed, since the container was launched with `--rm` flag):
 ```
 docker stop api
@@ -129,3 +134,15 @@ Or run `curl` command on your terminal:
 curl -s http://localhost:8080/object/10101 | jq
 ```
 ![alt text](docs/terminal.png)
+
+Additionally you can test the helm release:
+```
+helm test python-api -n app
+```
+
+After the job is complete, press `Ctrl+C` to stop skaffold and press `Ctrl+C` to stop minikube tunnel.
+
+Stop minikube:
+```
+minikube stop -p custom
+```
